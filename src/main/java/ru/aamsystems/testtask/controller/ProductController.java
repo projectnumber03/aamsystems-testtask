@@ -37,7 +37,7 @@ public class ProductController {
     }
 
     @PostMapping(value = "/", params = "deleteButton")
-    public String onEditButtonClick(@RequestParam(name = "deleteButton") final BigInteger id) {
+    public String onDeleteButtonClick(@RequestParam(name = "deleteButton") final BigInteger id) {
         productService.delete(id);
         return "redirect:/";
     }
