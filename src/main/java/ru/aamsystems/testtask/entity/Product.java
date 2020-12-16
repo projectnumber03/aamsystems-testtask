@@ -19,6 +19,9 @@ public class Product {
     BigInteger id;
 
     @Column
+    String name;
+
+    @Column
     String description;
 
 }

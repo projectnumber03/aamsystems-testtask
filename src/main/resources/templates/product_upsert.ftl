@@ -12,6 +12,8 @@
 <body>
 <form method="post">
     <input type="hidden" id="id" name="id" value="${product.id!}">
+    <label for="name">Название продукта</label><br>
+    <input type="text" id="name" name="name" value="${product.name!}"><br>
     <label for="description">Описание продукта</label><br>
     <textarea id="description" name="description">${product.description!}</textarea><br>
     <button class="button">Сохранить</button>

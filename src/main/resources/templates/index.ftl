@@ -11,10 +11,13 @@
 </head>
 <body>
 <form method="post">
+    <input type="text" name="search" placeholder="Введите название продукта...">
+    <button class="button" name="searchButton">Найти</button>
     <table class="blueTable" style="width: 50%">
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Название</th>
                 <th>Описание</th>
                 <th style="width: 10%"></th>
                 <th style="width: 10%"></th>
@@ -24,6 +27,7 @@
             <#list products as product>
             <tr>
                 <td>${product.id}</td>
+                <td>${product.name}</td>
                 <td>${product.description}</td>
                 <td style="text-align: center"><button class="button" name="editButton" value="${product.id}">Редактировать</button></td>
                 <td style="text-align: center"><button class="button" name="deleteButton" value="${product.id}">Удалить</button></td>

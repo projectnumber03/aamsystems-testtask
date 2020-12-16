@@ -23,6 +23,10 @@ public class ProductService {
         return productRepository.findById(Optional.ofNullable(id).orElse(new BigInteger("-1")));
     }
 
+    public List<Product> findByName(final String name) {
+        return productRepository.findByNameContains(name);
+    }
+
     public void save(final Product product) {
         productRepository.save(product);
     }
@@ -34,6 +38,7 @@ public class ProductService {
     public void upsert(final Product product) {
         findById(product.getId()).ifPresentOrElse(p -> {
             p.setDescription(product.getDescription());
+            p.setName(product.getName());
             save(p);
         }, () -> save(product));
     }

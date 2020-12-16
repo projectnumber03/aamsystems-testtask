@@ -42,6 +42,13 @@ public class ProductController {
         return "redirect:/";
     }
 
+    @PostMapping(value = "/", params = "searchButton")
+    public String onSearchButtonClick(@RequestParam(name = "search") final String name,
+                                      final Map<String, Object> model) {
+        model.put("products", productService.findByName(name));
+        return "index";
+    }
+
     @PostMapping("/")
     public String upsertProduct(final Product product) {
         productService.upsert(product);
